@@ -1,0 +1,16 @@
+name: homework_1
+on: [push]
+jobs:
+  build:
+    runs-on: unbuntu-latest
+    steps:
+      - uses actions/checkout@v2
+      - name "create build dir"
+      - run: |
+      	mkdir build
+      	cd build
+      - name "run cmake"
+      	run: cmake ..
+      - name build
+      	run: make
+
