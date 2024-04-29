@@ -6,7 +6,7 @@ jobs:
     steps:
       - uses actions/checkout@v2
       - name "create build dir"
-        run: 
+        run: |
           mkdir build
           cd build
       - name "run cmake"
