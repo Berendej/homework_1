@@ -1,3 +1,5 @@
 cmake_minimum_required( VERSION 3.0 )
-project( homework_1 )
+project( homework_1 VERSION 1.0.0.1)
+configure_file( version_config.in ${CMAKE_BINARY_DIR}/generated/version_config.h )
+include_directories ( ${CMAKE_BINARY_DIR}/generated/ )
 add_executable( homework_1 homework_1.cpp )

@@ -1,15 +1,15 @@
 #include <iostream>
+#include "version_config.h"
 
 using namespace std;
 
-unsigned get_build_number()
-{
-    return PATCH_VERSION;
-}
+// unable  using  #HOMEWORK1_VERSION directly in source
+// since the syntax #*** is only valid for macro parameters.
+#define STRINGIFY_(x) #x
+#define STRINGIFY(x) STRINGIFY_(x)
 
 int main(int argc, char* argv[])
 {
-    unsigned build_number { get_build_number() };
-    cout << "build " << build_number << endl;
+    cout << "build " << STRINGIFY(HOMEWORK1_VERSION) << endl;
     cout << "Hello world\n";
 }
