@@ -5,12 +5,9 @@ jobs:
     runs-on: unbuntu-latest
     steps:
       - uses: actions/checkout@v3
-      #- name "create build dir"
+      - run: cmake . -DPATCH_VERSION=${{ github.run_number }}
       - run: mkdir build
-      #- name "cd build dir"
       - run: cd build
-      #- name "run cmake"
       - run: cmake ..
-      #- name build
       - run: make
 

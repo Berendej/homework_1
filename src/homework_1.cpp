@@ -2,8 +2,14 @@
 
 using namespace std;
 
+unsigned get_build_number()
+{
+    return PATCH_VERSION;
+}
+
 int main(int argc, char* argv[])
 {
-	cout << "Try to build on push\n";
-	cout << "Hello world\n";	
+    unsigned build_number { get_build_number() };
+    cout << "build " << build_number << endl;
+    cout << "Hello world\n";
 }
