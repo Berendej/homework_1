@@ -3,5 +3,6 @@
 
 #define HOMEWORK1_VERSION @PATCH_VERSION@
 
+int version();
 
 #endif
