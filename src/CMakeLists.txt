@@ -14,6 +14,17 @@ target_link_libraries(homework1 PRIVATE homework1_lib )
 
 target_link_libraries(homework1_test PRIVATE homework1_lib )
 
-enable_testing()
+# package part which enables
+# run: cmake --build . --target package
+install(TARGETS homework1 RUNTIME DESTINATION bin)
+set(CPACK_GENERATOR DEB)
+set(CPACK_PACKAGE_VERSION_MAJOR "${PROJECT_VERSION_MAJOR}")
+set(CPACK_PACKAGE_VERSION_MINOR "${PROJECT_VERSION_MINOR}")
+set(CPACK_PACKAGE_VERSION_PATCH "${PROJECT_VERSION_PATCH}")
+set(CPACK_PACKAGE_CONTACT example@example.com)
+include(CPack)
 
+#testing part which enables
+# cmake --build . --target test
+enable_testing()
 add_test(test_version homework1_test) 
