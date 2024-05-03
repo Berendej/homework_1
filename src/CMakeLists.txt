@@ -1,7 +1,8 @@
-cmake_minimum_required( VERSION 3.0 )
-project( homework1 VERSION 1.0.0.1)
+cmake_minimum_required( VERSION 3.10 )
 
 set(PATCH_VERSION "2" CACHE INTERNAL "Patch version")
+
+project( homework1 VERSION 0.1.${PATCH_VERSION})
 
 configure_file( version_config.in ${CMAKE_BINARY_DIR}/generated/version_config.h )
 include_directories ( ${CMAKE_BINARY_DIR}/generated/ )
